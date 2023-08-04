@@ -51,18 +51,37 @@ body {
     font-size: 20px;
 }
 
+.task-lines:hover .trashcan-logo {
+    visibility: visible;
+ }
+ .trashcan-logo {
+     visibility: hidden;
+ }
+
 .individual-task {
     width: 450px;
     color: #333333;
 }
 
+.individual-task:hover {
+    color:#6d6df8;
+    font-weight: 400;
+    font-size: 22px;
+}
+
 .trashcan-logo {
     width: 150px;
+    padding: 4px 0px 0px 0px;
+    margin: 0px;
+    display: flex;
 }
 
 .trashcan-img {
     height: 15px;
     width: 15px;
+    padding: 0px;
+    margin: 0px;
+    vertical-align: top;
 }
 
 .removeFromTodoButton {
