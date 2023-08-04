@@ -63,7 +63,7 @@ body {
     color: #333333;
 }
 
-.individual-task:hover {
+.task-lines:hover .individual-task {
     color:#6d6df8;
     font-weight: 400;
     font-size: 22px;
