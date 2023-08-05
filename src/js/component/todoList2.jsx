@@ -4,10 +4,15 @@ const TodoListTwo = () => {
 	const [newTodo, setNewTodo] = useState("");
     const [todoList, setTodoList] = useState([]);
 
-    function playSound() {
-        var audio = new Audio('https://interactive-examples.mdn.mozilla.net/media/cc0-audio/t-rex-roar.mp3');
+
+    function play() {
+        var audio = new Audio('https://github.com/labs404/jay-labs-to-do-list-application-project/blob/0fa42c9c528dd65480a721e7f2d28504904751eb/src/sound/pop-sound.mp3');
         audio.play();
       }
+    // function playSound() {
+    //     var audio = new Audio('https://github.com/labs404/jay-labs-to-do-list-application-project/blob/0fa42c9c528dd65480a721e7f2d28504904751eb/src/sound/pop-sound.mp3');
+    //     audio.play();
+    //   }
 
     function addToTodoList() {
         const duplicateCheck = todoList.filter((word) => word == newTodo);  
@@ -26,6 +31,7 @@ const TodoListTwo = () => {
             let newArr = [...todoList, newTodo];
             setTodoList(newArr);
             setNewTodo("");
+            play();
         }
     };
 
