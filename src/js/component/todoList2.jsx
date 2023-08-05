@@ -4,6 +4,11 @@ const TodoListTwo = () => {
 	const [newTodo, setNewTodo] = useState("");
     const [todoList, setTodoList] = useState([]);
 
+    function playSound() {
+        var audio = new Audio('https://interactive-examples.mdn.mozilla.net/media/cc0-audio/t-rex-roar.mp3');
+        audio.play();
+      }
+
     function addToTodoList() {
         const duplicateCheck = todoList.filter((word) => word == newTodo);  
 
