@@ -6,13 +6,10 @@ const TodoListTwo = () => {
 
 
     function play() {
-        var audio = new Audio('https://github.com/labs404/jay-labs-to-do-list-application-project/blob/0fa42c9c528dd65480a721e7f2d28504904751eb/src/sound/pop-sound.mp3');
+        var audio = new Audio('https://github.com/labs404/jay-labs-to-do-list-application-project/raw/0fa42c9c528dd65480a721e7f2d28504904751eb/src/sound/pop-sound.mp3');
         audio.play();
-      }
-    // function playSound() {
-    //     var audio = new Audio('https://github.com/labs404/jay-labs-to-do-list-application-project/blob/0fa42c9c528dd65480a721e7f2d28504904751eb/src/sound/pop-sound.mp3');
-    //     audio.play();
-    //   }
+        return;
+    };
 
     function addToTodoList() {
         const duplicateCheck = todoList.filter((word) => word == newTodo);  
@@ -20,36 +17,35 @@ const TodoListTwo = () => {
         if (duplicateCheck.length > 0) {
             alert("Sorry, no duplicate tasks. Please enter a different task.");
             return;
-        }
+        };
 
         if (todoList.length >= 29) {
             alert("Holy smokes, that's a lot of tasks! Please complete some tasks and come back");
             return;
-        }
+        };
 
         if (newTodo != "" ) {
             let newArr = [...todoList, newTodo];
             setTodoList(newArr);
             setNewTodo("");
             play();
-        }
+        };
     };
 
     function removeFromTodoList(itemIdentifier) {
         let workingList = todoList.filter(item => item != itemIdentifier);
-        console.log(workingList);
         setTodoList(workingList);
-    }
+    };
 
     function handleKeyPress(key) {
         if (key.key === "Enter") {
             addToTodoList();
-        }
-    }
+        };
+    };
 
     let mappedTasks = todoList.map(task => {
         return (
-            <div key={task.id} className="task-lines">
+            <div key={task} className="task-lines">
                 <div className="individual-task">
                     {task}
                 </div>
@@ -60,7 +56,7 @@ const TodoListTwo = () => {
                     </button>
                 </div>
             </div>    
-        )
+        );
     });
 
 	return (
